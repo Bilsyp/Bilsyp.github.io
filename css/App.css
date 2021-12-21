@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  scrollbar-color: red;
+}
+.grid-gallery {
+  margin: 20px auto;
+  width: 90%;
+  padding: 10px;
+}
+.grid-gallery img {
+  box-shadow: 5px -5px 10px rgba(0,0,0,0.32);
+  border-radius: 0;
+}
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  list-style: none;
+  grid-gap: 5px;
+  padding: 0;
+  margin: 0;
+}
+.Model {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.54);
+}
+.BoxTime {
+  width: 90%;
+  font-size: 3rem;
+  background-color: aqua;
+  padding: 20px;
+  margin: 50px auto;
+  position: relative;
+  border-radius: 15px;
+  top: 30%;
+
+}
+.clock {
+  float: right;
+
+}
+.time {
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+}
+.hour > h2 {
+  font-size: 3rem;
+}
+.minute > h2 {
+  font-size: 3rem;
+}
+.second > h2 {
+  font-size: 3rem;
+}
+.box {
+  width: 100%;
+  overflow: hidden;
+}
+
+.box .box1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.cards {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  margin: 0 auto;
+}
+.cardsForm {
+  width: 100%;
+  padding: 10px;
+  margin: 0 auto;
+}
+.Navbar {
+  width: 100%;
+  height: 80px;
+  position: fixed;
+}
+
+.Navbar ul {
+  list-style: none;
+  float: right;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.Navbar ul li {
+  display: inline-block;
+  margin-top: 8px;
+  margin-left: 10px;
+}
+
+.Navbar ul li a {
+  padding: 14px 16px;
+  font-size: 17px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.Times,
+.Bars {
+  display: none;
+  opacity: 0;
+}
+
+.logo {
+  position: relative;
+  width: 60px;
+  top: 0px;
+  height: 60px;
+  font-size: 3em;
+  margin-left: 20px;
+}
+
+a:hover {
+  background-color: #0d6efd;;
+  text-decoration: underline;
+  text-decoration-color: white;
+
+}
+.Img {
+  filter: grayscale(100%);
+  transition: 1s;
+}
+.Img:hover {
+  filter: grayscale(0);
+
+  transform: scale(1.1);
+}
+.box2 {
+  display: none;
+}
+.box3 {
+  display: none;
+}
+img {
+  border-radius: 50%;
+}
+@media screen and (max-width:600px) {
+  .Navbar ul {
+    position: absolute;
+    width: 100%;
+    display: block;
+    padding: 0;
+    margin: 0;
+    left: -100%;
+    top: 80px;
+    background: rgba(0,0,0,0.54);
+    text-align: center;
+    z-index: 1020;
+  }
+
+  .Navbar ul li {
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+
+  .Navbar ul li a {
+    font-size: 17px;
+  }
+
+  .Times {
+    float: right;
+    display: none;
+    font-size: 30px;
+    opacity: 1;
+    margin-right: 30px;
+    margin-top: 25px;
+  }
+
+  .Bars {
+    float: right;
+    display: block;
+    font-size: 30px;
+    opacity: 1;
+    margin-right: 30px;
+    margin-top: 25px;
+  }
+
+  .logo {
+    font-size: 30px;
+    top: 10px;
+  }
+  .BoxTime {
+    top: 20%;
+  }
+  .hour > h2 {
+    font-size: 1.80rem;
+  }
+  .minute > h2 {
+    font-size: 1.80rem;
+  }
+  .second > h2 {
+    font-size: 1.80rem;
+  }
+  .t {
+    font-size: 30px;
+  }
+
+}
