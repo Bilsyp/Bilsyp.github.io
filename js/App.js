@@ -73,5 +73,11 @@ function none() {
 
 }
 // Run function //
+// const Name = document.getElementById('Name').value;
+// const Email = document.getElementById("Email").value;
+// const NumPhone = document.getElementById("NumPhone").value;
+// const Descripsi = document.getElementById("Descripsi").value;
+// const btn = document.getElementById("btn");
+
+
 Dates();
-ios()

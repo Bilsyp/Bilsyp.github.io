@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title></title>
   <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all" />
-  <link rel="stylesheet" href="css/all.css"  type="text/css" media="all" />
+  <link rel="stylesheet" href="css/all.css" type="text/css" media="all" />
   <link rel="stylesheet" href="css/index.css" type="text/css" media="all" />
   <link rel="stylesheet" href="css/App.css
   " type="text/css" media="all" />
@@ -294,7 +294,7 @@
             <div class="col-md-6">
               <label for="Descripsi">Descripsi</label>
               <textarea required class="form-control" name="Descripsi" id=Descripsi rows="9" cols="40"></textarea>
-              <button class="btn btn-primary mt-2 float-md-end btn-md-lg" type="submit">Send</button>
+              <button id="btn" class="btn btn-primary mt-2 float-md-end btn-md-lg" type="submit">Send</button>
             </div>
           </div>
         </form>
@@ -302,6 +302,21 @@
     </div>
   </section>
   <!-- End Contact !-->
+  <section class="bg-primary mt-5 ">
+    <div class="container-fluid">
+      <table class="" border="1">
+        <thead>
+          <tr>
+
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+  </section>
   <!-- Footer !-->
   <footer class="text-light mt-5 footer bg-dark p-3 border-1 border-top border-primary">
     <div class="container-fluid">
@@ -326,20 +341,72 @@
   </div>
   <!-- End Footer !-->
   <!-- <label for="exampleDataList" class="form-label">Datalist example</label>
-        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-        <datalist id="datalistOptions">
-          <option value="San Francisco">
-          <option value="New York">
-          <option value="Seattle">
-          <option value="Los Angeles">
-          <option value="Chicago">
-        </datalist>!-->
+          <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+          <datalist id="datalistOptions">
+            <option value="San Francisco">
+            <option value="New York">
+            <option value="Seattle">
+            <option value="Los Angeles">
+            <option value="Chicago">
+          </datalist>!-->
   <script src="js/Jquery.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/all.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/animation.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/slider.js" type="text/javascript" charset="utf-8"></script>
   <script src="js/App.js" type="text/javascript" charset="utf-8"></script>
-  <script src="js/Form.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript" charset="utf-8">
+    function Data(name, email, numphone, descripsi) {
+      this.name = name;
+      this.email = email;
+      this.numphone = numphone;
+      this.descripsi = descripsi;
+    }
+    let Ara = new Data("Araa", "ArrA44@gmail.com", 765677, "Hello World");
+    Data.prototype.Get = () => {
+      let lemari = []
+      if (localStorage.getItem("Data") === null || localStorage.getItem("Data") === "") {
+        return []
+      } else {
+        lemari = JSON.parse(localStorage.getItem("Data"));
+        return lemari
+      }
+
+    }
+    Data.prototype.Save = (Datax)=> {
+      let result = Ara.Get()
+      result.push(Datax);
+
+      localStorage.setItem("Data", JSON.stringify(result));
+    }
+    Data.prototype.Ul = (Data)=> {
+      const result = Ara.Get()
+      const body = document.querySelector ("tbody")
+      const tr = document.createElement("tr");
+      let ts = ""
+
+  result.forEach((key)=>{
+    ts += `<tr><td>${key.name}</td></tr>`
+  })
+  
+
+    }
+    Data.prototype.Display = ()=> {
+      const result = Ara.Get();
+      result.forEach((key)=> {
+        Ara.Ul()
+      })
+    }
+    const i = new Data(882,8288282,8282,777)
+    //i.Save(Ara)
+    //i.Display()
+    // const Name = document.getElementById('Name').value;
+    // const Email = document.getElementById("Email").value;
+    // const NumPhone = document.getElementById("NumPhone").value;
+    // const Descripsi = document.getElementById("Descripsi").value;
+    // const btn = document.getElementById("btn");
+
+
+  </script>
 </body>
 
 </html>
