@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border;
+}
+body {
+  min-height: 100vh;
+  font-family: Arial,Sans-Serif;
+  background:#000 url("../../image/Img3.jpg") center center/cover no-repeat;
+  animation: animate 4s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.Box {
+  width:350px;
+  height: 200px;
+  background:white;
+}
+@keyframes animate{
+  to {
+    filter:hue-rotate(360deg);
+  }
+}
